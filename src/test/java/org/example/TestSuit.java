@@ -10,17 +10,59 @@ public class TestSuit extends BaseTest {
     RegisterPage registerPage = new RegisterPage();
     //Creating object for RegisterResultPage
     RegisterResultPage registerResultPage = new RegisterResultPage();
+    //Creating object for EmailAFriend
+    EmailAFriend emailSFriend = new EmailAFriend();
+    //Creating object for EmailResultPage
+    EmailResultPage emailResultPage =new EmailResultPage();
+    //Creating object for Facebook
+    Facebook facebook = new Facebook();
+    //Creating object for NewsDetails
+    NewsDetails newsDetails = new NewsDetails();
+    //Creating object for NewsCommentResult
+    NewsCommentResult newsCommentResult = new NewsCommentResult();
 
     @Test//This a test method
-    public void register() {
-    //click on registration button
+    public void verifyRegister() {
+    //click on registration button.
    homePage.verifyRegisterButtonPresent();
    //verify user is on register page
    registerPage.verifyUserIsOnRegistrationPage();
    //enter registration details
    registerPage.enterRegistrationDetails();
    //verify user has been registered successfully
-   registerResultPage.verifyUserHasBeenRegisteredSuccessfully();
-
+   //registerResultPage.verifyUserHasBeenRegisteredSuccessfully();
+        }
+   @Test
+   public void verifyEmailAFriend() {
+       //verify user is on register page
+       registerPage.verifyUserIsOnRegistrationPage();
+       //enter registration details
+       registerPage.enterRegistrationDetails();
+       //enter emailSFriend details
+       emailSFriend.enterEmaildetails();
+       //verify user has been EmailMessageIsSent successfully
+       emailResultPage.verifyEmailMessageIsSentSuccessfully();
+    }
+    @Test
+    public void verifyVoteAlertMessage(){
+        //verify user has click on the vote button
+       homePage.voteMessage();
+    }
+    @Test
+    public void verifySetFacebook(){
+        //verify user is on facebookPage
+        facebook.faceBookPage();
+    }
+    @Test
+    public void verifyNewsComment(){
+        //verify user has Enter news Details
+        newsDetails.newsComment();
+        //verify user has been verifyMessage is Sent successfully
+        newsCommentResult.verifyMessageIsSentSuccessfully();
+    }
+    @Test
+    public void verifyCurrency(){
+        //verify user has select currency
+       homePage.selectCurrency();
     }
 }

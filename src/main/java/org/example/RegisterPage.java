@@ -24,6 +24,9 @@ public class RegisterPage extends Utils{
     private By _PasswordField = By.id("Password");
     private By _ConfirmPassword = By.id("ConfirmPassword");
     private By _registerSubmitButtonField = By.id("register-button");
+    private By _Continue = By.xpath("//a[@class=\"button-1 register-continue-button\"]");
+    //private By _appleMacbookPro = By.linkText("Apple MacBook Pro 13-inch");
+
     public void verifyUserIsOnRegistrationPage(){
 //AssertFalse method asserts that a specified condition is false
         Assert.assertEquals(reg, "register","Your registration completed");
@@ -47,6 +50,11 @@ public class RegisterPage extends Utils{
         typeText(_ConfirmPassword,"Dhruv Patel");
         WaitForElementToBeClickable(_registerSubmitButtonField,50);
         clickOnElement(_registerSubmitButtonField);
+        clickOnElement(_Continue);
+
+
+
+
     }
 
 

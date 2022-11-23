@@ -2,6 +2,7 @@
 package org.example;
 import org.openqa.selenium.chrome.ChromeDriver;
 //importing a package of AfterMethod
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 //importing a package of BeforeMethod
 import org.testng.annotations.BeforeMethod;
@@ -17,8 +18,12 @@ public class BaseTest extends Utils{
 
     }
     @AfterMethod//Executes after each test method
-    public void teardown()
+    public void teardown(ITestResult result)
     {
+        //If statement is use for to Capture ScreenShot when any class fail
+        if (!result.isSuccess()){
+captureScreenshot(result.getName());
+        }
         // to close the browser
         driver.close();
     }
