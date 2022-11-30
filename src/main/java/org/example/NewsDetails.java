@@ -28,6 +28,7 @@ public class NewsDetails extends Utils{
         List<WebElement> commentList = driver.findElements(By.xpath("//div[@class=\"comments\"]"));
         for (WebElement element:commentList){
         System.out.println(element.getText());
+
         }
     }
 }

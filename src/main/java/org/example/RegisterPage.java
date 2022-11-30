@@ -37,17 +37,17 @@ public class RegisterPage extends Utils{
         clickOnElement(_icoregister);
         clickOnElement(_genderField);
         //to input content in editable text fields or password fields in a webpage.
-        typeText(_firstNameField,"Dhruv");
-        typeText(_lastNameField,"Patel");
+        typeText(_firstNameField,LoadProp.getProperty("FirstName"));
+        typeText(_lastNameField,LoadProp.getProperty("LastName"));
         //The <select> element is used to create a drop-down list.
-        selectFromDropdownByVisibleText(_DateOfBirthDateField,"14");
-        selectFromDropdownByVisibleText(_DateOfBirthMonthField,"May");
-        selectFromDropdownByVisibleText(_DateOfBirthYear,"1995");
-        typeText(_emailField,"dhruv" +getTimeStamp()+"@gmail.com");
-        typeText(_CompanyField,"DP Company");
+        selectFromDropdownByVisibleText(_DateOfBirthDateField,LoadProp.getProperty("DateOfBirth"));
+        selectFromDropdownByVisibleText(_DateOfBirthMonthField,LoadProp.getProperty("Month"));
+        selectFromDropdownByVisibleText(_DateOfBirthYear,LoadProp.getProperty("Year"));
+        typeText(_emailField,LoadProp.getProperty("Email1") +getTimeStamp()+LoadProp.getProperty("Email2"));
+        typeText(_CompanyField,LoadProp.getProperty("CompanyName"));
         clickOnElement(_NewsLetterField);
-        typeText(_PasswordField,"Dhruv Patel");
-        typeText(_ConfirmPassword,"Dhruv Patel");
+        typeText(_PasswordField,LoadProp.getProperty("Password"));
+        typeText(_ConfirmPassword,LoadProp.getProperty("ConfirmPassword"));
         WaitForElementToBeClickable(_registerSubmitButtonField,50);
         clickOnElement(_registerSubmitButtonField);
         clickOnElement(_Continue);

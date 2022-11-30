@@ -14,17 +14,17 @@ public class BaseTest extends Utils{
     public void setUp()
     {
         //The open() method opens a new browser window, or a new tab.
-        driverManager.openBrowser();
+       driverManager.openBrowser();
 
     }
-    @AfterMethod//Executes after each test method
-    public void teardown(ITestResult result)
-    {
-        //If statement is use for to Capture ScreenShot when any class fail
-        if (!result.isSuccess()){
-captureScreenshot(result.getName());
-        }
-        // to close the browser
-        driver.close();
-    }
+//    @AfterMethod//Executes after each test method
+//    public void teardown(ITestResult result)
+//    {
+//        //If statement is use for to Capture ScreenShot when any class fail
+//        if (!result.isSuccess()){
+//captureScreenshot(result.getName());
+//        }
+//        // to close the browser
+//        driver.quit();
+//    }
 }

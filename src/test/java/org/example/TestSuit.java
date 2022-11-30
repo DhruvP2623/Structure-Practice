@@ -20,9 +20,11 @@ public class TestSuit extends BaseTest {
     NewsDetails newsDetails = new NewsDetails();
     //Creating object for NewsCommentResult
     NewsCommentResult newsCommentResult = new NewsCommentResult();
-
+    Nike nike = new Nike();
+    CellPhone cellPhone = new CellPhone();
+CameraAndPhoto cameraAndPhoto = new CameraAndPhoto();
     @Test//This a test method
-    public void verifyRegister() {
+    public void verifyUserIsOnRegisterPage() {
     //click on registration button.
    homePage.verifyRegisterButtonPresent();
    //verify user is on register page
@@ -65,4 +67,26 @@ public class TestSuit extends BaseTest {
         //verify user has select currency
        homePage.selectCurrency();
     }
+
+    @Test
+    public void verifyForTheHover(){
+
+        homePage.hoverOverAndNavigateToDesiredCategoryPage("Electronics","Camera & photo");
+        cameraAndPhoto.cameraAndPhotoResult();
+    }
+
+    @Test
+    public void verifySearchBarProduct(){
+        homePage.searchSStore();
+        nike.nikeProducts();
+    }
+@Test
+    public void verifyCellPhone(){
+    registerPage.verifyUserIsOnRegistrationPage();
+    //enter registration details
+    registerPage.enterRegistrationDetails();
+        homePage.extra();
+        //cellPhone.cellPhoneExtra();
+}
+
 }
