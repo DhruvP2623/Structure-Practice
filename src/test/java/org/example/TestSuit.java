@@ -21,7 +21,7 @@ public class TestSuit extends BaseTest {
     //Creating object for NewsCommentResult
     NewsCommentResult newsCommentResult = new NewsCommentResult();
     Nike nike = new Nike();
-    CellPhone cellPhone = new CellPhone();
+   // CellPhone cellPhone = new CellPhone();
 CameraAndPhoto cameraAndPhoto = new CameraAndPhoto();
     @Test//This a test method
     public void verifyUserIsOnRegisterPage() {
@@ -80,13 +80,13 @@ CameraAndPhoto cameraAndPhoto = new CameraAndPhoto();
         homePage.searchSStore();
         nike.nikeProducts();
     }
-@Test
-    public void verifyCellPhone(){
-    registerPage.verifyUserIsOnRegistrationPage();
-    //enter registration details
-    registerPage.enterRegistrationDetails();
-        homePage.extra();
-        //cellPhone.cellPhoneExtra();
-}
+//@Test
+//    public void verifyCellPhone(){
+//    registerPage.verifyUserIsOnRegistrationPage();
+//    //enter registration details
+//    registerPage.enterRegistrationDetails();
+//        homePage.extra();
+//        //cellPhone.cellPhoneExtra();
+//}
 
 }
